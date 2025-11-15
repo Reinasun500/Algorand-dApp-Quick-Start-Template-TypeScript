@@ -1,20 +1,34 @@
-// Home.tsx
-// Main landing UI: shows navbar, hero text, and feature cards.
-// This file only handles layout and modals — safe place to customize design.
+// Home.tsx - Professional Clean Light UI
 
+<<<<<<< HEAD
 
 
 import React, { useState } from 'react'
 import { useWallet } from '@txnlab/use-wallet-react'
 import { AiOutlineSend, AiOutlineStar, AiOutlineDeploymentUnit } from 'react-icons/ai'
 import { BsArrowUpRightCircle, BsWallet2 } from 'react-icons/bs'
+=======
+import { useWallet } from '@txnlab/use-wallet-react'
+import React, { useState } from 'react'
+import { AiOutlineDeploymentUnit, AiOutlineSend, AiOutlineStar, AiOutlineWallet } from 'react-icons/ai'
+import { BsArrowUpRightCircle, BsWallet2 } from 'react-icons/bs'
+
+// Frontend modals
+import AppCalls from './components/AppCalls'
+>>>>>>> refs/remotes/origin/main
 import ConnectWallet from './components/ConnectWallet'
-import Transact from './components/Transact'
 import NFTmint from './components/NFTmint'
 import Tokenmint from './components/Tokenmint'
+<<<<<<< HEAD
 import AppCalls from './components/AppCalls'
+=======
+import Transact from './components/Transact'
+>>>>>>> refs/remotes/origin/main
 
 interface HomeProps {}
+
+const cardBase = 'rounded-xl shadow-md hover:shadow-lg transition border border-gray-200 bg-white'
+const iconStyle = 'text-3xl text-gray-700'
 
 const Home: React.FC<HomeProps> = () => {
   const [openWalletModal, setOpenWalletModal] = useState<boolean>(false)
@@ -28,6 +42,7 @@ const Home: React.FC<HomeProps> = () => {
 
 
   return (
+<<<<<<< HEAD
   <div className="min-h-screen bg-[#f3ede1] text-[#222] flex flex-col font-sans">
       {/* ---------------- Navbar ---------------- */}
   <nav className="w-full bg-[#f3ede1]/90 border-b border-[#e8cc53] px-6 py-4 flex items-center justify-between backdrop-blur-md z-10 shadow-sm">
@@ -50,8 +65,23 @@ const Home: React.FC<HomeProps> = () => {
         </div>
         <button
           className="flex items-center gap-2 px-5 py-2 rounded-full bg-[#b31165] hover:bg-[#e8cc53] hover:text-[#b31165] text-sm font-bold text-white transition shadow-md border border-[#b31165]/30"
+=======
+    <div className="min-h-screen flex flex-col bg-gray-50 text-gray-900 font-inter">
+      {/* Navbar */}
+      <nav className="w-full flex items-center justify-between px-6 py-4 bg-white border-b border-gray-200 shadow-sm sticky top-0 z-20">
+        <div className="flex items-center gap-2">
+          <div className="h-8 w-8 flex items-center justify-center rounded-lg bg-indigo-600 text-white text-sm font-semibold">
+            A
+          </div>
+          <div className="font-semibold text-gray-800 tracking-wide">Algorand dApp Template</div>
+        </div>
+
+        <button
+>>>>>>> refs/remotes/origin/main
           onClick={() => setOpenWalletModal(true)}
+          className="flex items-center gap-2 px-4 py-2 bg-indigo-600 text-white text-sm font-medium rounded-lg hover:bg-indigo-700 transition"
         >
+<<<<<<< HEAD
           <span className="text-lg text-[#e8cc53]">
             <BsWallet2 />
           </span>
@@ -126,12 +156,57 @@ const Home: React.FC<HomeProps> = () => {
                 Accept tips, rewards, and payment in Algo or USDC directly in your wallet              </p>
               <button
                 className="w-full py-3 rounded-xl bg-[#b31165] hover:bg-[#e8cc53] hover:text-[#b31165] text-white font-bold shadow transition border border-[#b31165]/30"
+=======
+          <BsWallet2 className="text-white" />
+          {activeAddress ? 'Wallet Linked' : 'Connect Wallet'}
+        </button>
+      </nav>
+
+      {/* Hero */}
+      <header className="flex flex-col items-center text-center py-16 px-6">
+        <div className="inline-flex items-center gap-2 bg-indigo-50 text-indigo-700 border border-indigo-100 rounded-full px-4 py-1 text-sm font-medium mb-5">
+          <AiOutlineWallet />
+          <span>Algorand Universal Actions</span>
+        </div>
+        <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
+          Build Faster with a Universal dApp Surface
+        </h1>
+        <p className="text-gray-600 max-w-xl mb-8">
+          Trigger common Algorand actions — payments, NFT minting, token creation, and contract calls — from a clean, unified interface.
+        </p>
+
+        {!activeAddress && (
+          <button
+            onClick={() => setOpenWalletModal(true)}
+            className="px-6 py-3 bg-indigo-600 text-white text-sm font-semibold rounded-lg hover:bg-indigo-700 shadow-md transition"
+          >
+            Connect Wallet to Get Started
+          </button>
+        )}
+      </header>
+
+      {/* Features */}
+      <main id="features" className="flex-1 flex flex-col items-center px-6 pb-16">
+        {activeAddress ? (
+          <div className="w-full max-w-5xl">
+            <h2 className="text-xl font-semibold mb-6 text-gray-800">Available Actions</h2>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              <button
+                className={`${cardBase} flex flex-col items-start gap-3 p-5`}
+>>>>>>> refs/remotes/origin/main
                 onClick={() => setOpenPaymentModal(true)}
               >
-                Open
+                <div className="p-3 rounded-lg bg-indigo-100 text-indigo-700">
+                  <AiOutlineSend className={iconStyle} />
+                </div>
+                <div>
+                  <p className="text-base font-medium text-gray-900">Send Payment</p>
+                  <p className="text-sm text-gray-500">Transfer ALGO or assets.</p>
+                </div>
               </button>
-            </div>
 
+<<<<<<< HEAD
             {/* Mint NFT */}
             <div className="p-8 bg-white/90 rounded-3xl border border-[#e8cc53]/30 hover:shadow-lg hover:border-[#e8cc53]/60 transition group relative overflow-hidden shadow-sm">
               <span className="text-5xl mb-4 text-[#e8cc53] group-hover:scale-110 transition-transform">
@@ -143,12 +218,22 @@ const Home: React.FC<HomeProps> = () => {
               </p>
               <button
                 className="w-full py-3 rounded-xl bg-[#e8cc53] hover:bg-[#b31165] hover:text-[#e8cc53] text-[#b31165] font-bold shadow transition border border-[#e8cc53]/30"
+=======
+              <button
+                className={`${cardBase} flex flex-col items-start gap-3 p-5`}
+>>>>>>> refs/remotes/origin/main
                 onClick={() => setOpenMintModal(true)}
               >
-                Open
+                <div className="p-3 rounded-lg bg-pink-100 text-pink-700">
+                  <AiOutlineStar className={iconStyle} />
+                </div>
+                <div>
+                  <p className="text-base font-medium text-gray-900">Mint NFT</p>
+                  <p className="text-sm text-gray-500">Create a simple NFT collection.</p>
+                </div>
               </button>
-            </div>
 
+<<<<<<< HEAD
             {/* Create Token */}
             <div className="p-8 bg-white/90 rounded-3xl border border-[#b31165]/10 hover:shadow-lg hover:border-[#b31165]/40 transition group relative overflow-hidden shadow-sm">
               <span className="text-5xl mb-4 text-[#b31165] group-hover:scale-110 transition-transform">
@@ -160,12 +245,22 @@ const Home: React.FC<HomeProps> = () => {
               </p>
               <button
                 className="w-full py-3 rounded-xl bg-[#b31165] hover:bg-[#e8cc53] hover:text-[#b31165] text-white font-bold shadow transition border border-[#b31165]/30"
+=======
+              <button
+                className={`${cardBase} flex flex-col items-start gap-3 p-5`}
+>>>>>>> refs/remotes/origin/main
                 onClick={() => setOpenTokenModal(true)}
               >
-                Open
+                <div className="p-3 rounded-lg bg-emerald-100 text-emerald-700">
+                  <BsArrowUpRightCircle className={iconStyle} />
+                </div>
+                <div>
+                  <p className="text-base font-medium text-gray-900">Create Token</p>
+                  <p className="text-sm text-gray-500">Spin up a new ASA instantly.</p>
+                </div>
               </button>
-            </div>
 
+<<<<<<< HEAD
             {/* Contract Interactions */}
             <div className="p-8 bg-white/90 rounded-3xl border border-[#e8cc53]/30 hover:shadow-lg hover:border-[#e8cc53]/60 transition group relative overflow-hidden shadow-sm">
               <span className="text-5xl mb-4 text-[#e8cc53] group-hover:scale-110 transition-transform">
@@ -177,20 +272,40 @@ const Home: React.FC<HomeProps> = () => {
               </p>
               <button
                 className="w-full py-3 rounded-xl bg-[#e8cc53] hover:bg-[#b31165] hover:text-[#e8cc53] text-[#b31165] font-bold shadow transition border border-[#e8cc53]/30"
+=======
+              <button
+                className={`${cardBase} flex flex-col items-start gap-3 p-5`}
+>>>>>>> refs/remotes/origin/main
                 onClick={() => setOpenAppCallsModal(true)}
               >
-                Open
+                <div className="p-3 rounded-lg bg-blue-100 text-blue-700">
+                  <AiOutlineDeploymentUnit className={iconStyle} />
+                </div>
+                <div>
+                  <p className="text-base font-medium text-gray-900">Contract Interactions</p>
+                  <p className="text-sm text-gray-500">Call ARC-4 or app methods.</p>
+                </div>
               </button>
             </div>
           </div>
         ) : (
+<<<<<<< HEAD
           <div className="text-center text-[#b31165]/80 mt-20">
             <p className="text-xl font-semibold">⚡ Connect your wallet first to unlock the features below.</p>
+=======
+          <div className="text-center mt-8 text-gray-600">
+            <p>Connect your wallet to access all actions.</p>
+>>>>>>> refs/remotes/origin/main
           </div>
         )}
       </main>
 
-      {/* ---------------- Modals ---------------- */}
+      {/* Footer */}
+      <footer className="w-full py-5 text-center text-sm text-gray-500 border-t border-gray-200 bg-white">
+        © {new Date().getFullYear()} Algorand Universal dApp Template. Built for clarity & speed.
+      </footer>
+
+      {/* Modals */}
       <ConnectWallet openModal={openWalletModal} closeModal={() => setOpenWalletModal(false)} />
       <Transact openModal={openPaymentModal} setModalState={setOpenPaymentModal} />
       <NFTmint openModal={openMintModal} setModalState={setOpenMintModal} />
