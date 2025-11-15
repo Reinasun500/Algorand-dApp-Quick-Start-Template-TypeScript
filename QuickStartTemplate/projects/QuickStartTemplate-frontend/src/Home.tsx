@@ -40,13 +40,13 @@ const Home: React.FC<HomeProps> = () => {
               <path d="M34 24c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10 10 4.477 10 10z" fill="#fff" fillOpacity=".1" />
               <defs>
                 <linearGradient id="paint0_linear" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
-                  <stop stopColor="#06b6d4" />
-                  <stop offset="1" stopColor="#14b8a6" />
+                  <stop stopColor="#959d9eff" />
+                  <stop offset="1" stopColor="#b8e41cff" />
                 </linearGradient>
               </defs>
             </svg>
           </span>
-          <h1 className="text-3xl font-black text-[#b31165] tracking-tight drop-shadow-sm">Algorand dApp Gateway</h1>
+          <h1 className="text-3xl font-black text-[#b31165] tracking-tight drop-shadow-sm">ThriveHive</h1>
         </div>
         <button
           className="flex items-center gap-2 px-5 py-2 rounded-full bg-[#b31165] hover:bg-[#e8cc53] hover:text-[#b31165] text-sm font-bold text-white transition shadow-md border border-[#b31165]/30"
@@ -94,22 +94,24 @@ const Home: React.FC<HomeProps> = () => {
         <h2 className="text-5xl sm:text-7xl font-black text-[#87634c] mb-6 drop-shadow-xl tracking-tight">
           Welcome to ThriveHive
         </h2>
-        <p className="text-xl sm:text-2xl text-[#b31165] max-w-2xl mx-auto mb-10 font-semibold">
-          Incentivizes, Showcases, Celebrates & Inspires Fitness Professionals;
 
-          Together We Thrive, Together We Inspire Our Community .<br className="hidden sm:inline" />
-          Connect your wallet to Begin Your Journey!
+        <p className="text-xl sm:text-2xl text-[#b31165] max-w-2xl mx-auto mb-10 font-semibold">
+         Together We Thrive <br className="hidden sm:inline" />
+
+        ThriveHive Celebrates Fitness Professionals  <br className="hidden sm:inline" />
+
+
+          <br className="hidden sm:inline" />
+          Connect Your Wallet To Begin Your Journey!
         </p>
+
         <button
           className="inline-block px-10 py-4 rounded-full bg-[#e8cc53] text-[#b31165] font-extrabold text-xl shadow-xl hover:scale-105 hover:bg-[#b31165] hover:text-[#e8cc53] hover:shadow-2xl transition-transform duration-200 border-2 border-[#b31165]"
           onClick={() => setOpenWalletModal(true)}
         >
           {activeAddress ? 'Wallet Connected' : 'Get Started – Connect Wallet'}
         </button>
-
   </header>
-
-
       {/* ---------------- Features Grid ---------------- */}
   <main className="flex-1 px-4 pb-16">
         {activeAddress ? (
@@ -119,10 +121,9 @@ const Home: React.FC<HomeProps> = () => {
               <span className="text-5xl mb-4 text-[#b31165] group-hover:scale-110 transition-transform">
                 <AiOutlineSend />
               </span>
-              <h3 className="text-2xl font-extrabold mb-2 text-[#87634c]">Send Payment</h3>
+              <h3 className="text-2xl font-extrabold mb-2 text-[#87634c]">Accept & Send Payment</h3>
               <p className="text-base text-[#b31165]/80 mb-6">
-                Try sending 1 ALGO to any address on TestNet. This helps you understand wallet transactions.
-              </p>
+                Accept tips, rewards, and payment in Algo or USDC directly in your wallet              </p>
               <button
                 className="w-full py-3 rounded-xl bg-[#b31165] hover:bg-[#e8cc53] hover:text-[#b31165] text-white font-bold shadow transition border border-[#b31165]/30"
                 onClick={() => setOpenPaymentModal(true)}
@@ -138,7 +139,7 @@ const Home: React.FC<HomeProps> = () => {
               </span>
               <h3 className="text-2xl font-extrabold mb-2 text-[#87634c]">Mint NFT</h3>
               <p className="text-base text-[#b31165]/80 mb-6">
-                Upload an image and mint it as an NFT on Algorand with IPFS metadata stored via Pinata.
+                Upload an image and mint it as an NFT on Algorand to send to your clients.
               </p>
               <button
                 className="w-full py-3 rounded-xl bg-[#e8cc53] hover:bg-[#b31165] hover:text-[#e8cc53] text-[#b31165] font-bold shadow transition border border-[#e8cc53]/30"
@@ -155,7 +156,7 @@ const Home: React.FC<HomeProps> = () => {
               </span>
               <h3 className="text-2xl font-extrabold mb-2 text-[#87634c]">Create Token (ASA)</h3>
               <p className="text-base text-[#b31165]/80 mb-6">
-                Spin up your own Algorand Standard Asset (ASA) in seconds. Perfect for testing token creation.
+                Create your own token for loyalty points, rewards, or in-app currency on Algorand
               </p>
               <button
                 className="w-full py-3 rounded-xl bg-[#b31165] hover:bg-[#e8cc53] hover:text-[#b31165] text-white font-bold shadow transition border border-[#b31165]/30"
@@ -172,7 +173,7 @@ const Home: React.FC<HomeProps> = () => {
               </span>
               <h3 className="text-2xl font-extrabold mb-2 text-[#87634c]">Contract Interactions</h3>
               <p className="text-base text-[#b31165]/80 mb-6">
-                Interact with a simple Algorand smart contract to see how stateful dApps work on chain.
+                Create contracts for client interaction, subscriptions, and more
               </p>
               <button
                 className="w-full py-3 rounded-xl bg-[#e8cc53] hover:bg-[#b31165] hover:text-[#e8cc53] text-[#b31165] font-bold shadow transition border border-[#e8cc53]/30"
